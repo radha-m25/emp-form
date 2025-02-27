@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+// customHooks to manage state and functions
 const useForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const handleForm = () => {
-    navigate("/form"); // Navigate to the /form path
+    navigate("/form");
   };
 
   return (
