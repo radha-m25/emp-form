@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom for navigation
+import './App.css'; // Import CSS file for styling
 
 function App() {
+  const navigate = useNavigate(); // Initialize useNavigate which returns a function to navigate programmatically
+
+  // Handle the button click to navigate to the EmployeeForm
+  const handleForm = () => {
+    navigate("/form"); // Navigate to the /form path
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main-container'>
+      <h3>
+        Please click the button below to fill out the Employee Form.
+      </h3>
+      <button className='btn' onClick={handleForm}>EMPLOYEE FORM</button> {/* Button to navigate to the EmployeeForm */}
     </div>
   );
 }
 
-export default App;
+export default App; // Export the App component as the default export

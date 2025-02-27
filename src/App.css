@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  /* Apply a linear gradient background from dark blue to light blue */
+  background: linear-gradient(to right, #00008b 0%, #87cefa 100%);
+  /* Remove default margin */
+  margin: 0;
+  /* Set the body's height to full viewport height */
+  height: 100vh;
+  /* Center children horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Form Container Styling */
+.form-container {
+  /* Use flexbox to center children vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Card Styling */
+.card {
+  /* White background for contrast */
+  background-color: #fff;
+  /* Padding inside the card */
+  padding: 20px;
+  /* Box shadow for a subtle 3D effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Fixed width and height for the card (commented out) */
+  /* width: 400px;
+  height: 80vh; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form Content Styling */
+.form-content {
+  /* Center form content vertically */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* Ensure full width */
+  width: 100%;
+  /* Set a maximum width for the form content */
+  max-width: 500px; /* Fixed width for the form-content */
+}
+
+/* Common Data Styles for Form Fields */
+[data-style="common"] {
+  /* Padding inside the elements */
+  padding: 10px;
+  /* Margin bottom for spacing between elements */
+  margin-bottom: 10px;
+  /* Full width for form fields */
+  width: 100%;
+  /* Rounded corners */
+  border-radius: 5px;
+  /* Include padding and border in the element's total width */
+  box-sizing: border-box; /* Ensure padding doesn't increase element width */
+}
+
+/* Label Styling */
+label {
+  /* Bold font for better readability */
+  font-weight: bold;
+  /* Full width to align with form fields */
+  width: 100%; /* Ensure the labels take the full width */
+  /* Include padding and border in the element's total width */
+  box-sizing: border-box;
+}
+
+/* Error Message Styling */
+.error {
+  /* Red color for error messages */
+  color: red;
+  /* Bold font to make error messages stand out */
+  font-weight: bold;
+  /* Full width to align with form fields */
+  width: 100%; /* Ensure error messages take the full width */
+  /* Include padding and border in the element's total width */
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+.btn {
+  /* Fixed width for the button */
+  width: 200px;
+  /* Padding inside the button */
+  padding: 10px 10px;
+  /* Dark blue background and white text for contrast */
+  background: #0505b8;
+  color: white;
+  /* Rounded corners */
+  border-radius: 10px;
+  /* No border */
+  border: none;
+}
+
+/* Heading Styling */
+h3 {
+  /* White text color to stand out against the gradient background */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Main Container Styling */
+.main-container {
+  /* Flexbox for column alignment of children */
+  display: flex;
+  flex-direction: column;
+  /* Center children horizontally */
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Grid Layout for Form Fields */
+.grid-container {
+  /* Use CSS grid to create a two-column layout */
+  display: grid;
+  /* Two equally wide columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* Gap between grid items */
+  gap: 20px;
+}
+
+/* Individual Grid Item Styling */
+.grid-item {
+  /* Use flexbox to arrange content within each grid item */
+  display: flex;
+  flex-direction: column;
 }
