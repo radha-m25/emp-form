@@ -1,130 +1,138 @@
-/* Global Styles */
-body {
-  /* Apply a linear gradient background from dark blue to light blue */
-  background: linear-gradient(to right, #00008b 0%, #87cefa 100%);
-  /* Remove default margin */
-  margin: 0;
-  /* Set the body's height to full viewport height */
-  height: 100vh;
-  /* Center children horizontally and vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Container for form */
 
-/* Form Container Styling */
+
 .form-container {
-  /* Use flexbox to center children vertically and horizontally */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Card Styling */
-.card {
-  /* White background for contrast */
-  background-color: #fff;
-  /* Padding inside the card */
   padding: 20px;
-  /* Box shadow for a subtle 3D effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Fixed width and height for the card (commented out) */
-  /* width: 400px;
-  height: 80vh; */
-}
-
-/* Form Content Styling */
-.form-content {
-  /* Center form content vertically */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Ensure full width */
-  width: 100%;
-  /* Set a maximum width for the form content */
-  max-width: 500px; /* Fixed width for the form-content */
-}
-
-/* Common Data Styles for Form Fields */
-[data-style="common"] {
-  /* Padding inside the elements */
-  padding: 10px;
-  /* Margin bottom for spacing between elements */
-  margin-bottom: 10px;
-  /* Full width for form fields */
-  width: 100%;
-  /* Rounded corners */
-  border-radius: 5px;
-  /* Include padding and border in the element's total width */
-  box-sizing: border-box; /* Ensure padding doesn't increase element width */
-}
-
-/* Label Styling */
-label {
-  /* Bold font for better readability */
-  font-weight: bold;
-  /* Full width to align with form fields */
-  width: 100%; /* Ensure the labels take the full width */
-  /* Include padding and border in the element's total width */
-  box-sizing: border-box;
-}
-
-/* Error Message Styling */
-.error {
-  /* Red color for error messages */
-  color: red;
-  /* Bold font to make error messages stand out */
-  font-weight: bold;
-  /* Full width to align with form fields */
-  width: 100%; /* Ensure error messages take the full width */
-  /* Include padding and border in the element's total width */
-  box-sizing: border-box;
-}
-
-/* Button Styling */
-.btn {
-  /* Fixed width for the button */
-  width: 200px;
-  /* Padding inside the button */
-  padding: 10px 10px;
-  /* Dark blue background and white text for contrast */
-  background: #0505b8;
-  color: white;
-  /* Rounded corners */
+  background: rgb(215, 208, 208);
   border-radius: 10px;
-  /* No border */
-  border: none;
 }
 
-/* Heading Styling */
-h3 {
-  /* White text color to stand out against the gradient background */
-  color: white;
+/* Card for styling the form */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
 }
 
-/* Main Container Styling */
-.main-container {
-  /* Flexbox for column alignment of children */
+/* Form content grid */
+.form-content {
+  gap: 20px;
   display: flex;
-  flex-direction: column;
-  /* Center children horizontally */
-  align-items: center;
+  justify-content: center;
 }
 
-/* Grid Layout for Form Fields */
+/* Grid container with column layout */
 .grid-container {
-  /* Use CSS grid to create a two-column layout */
   display: grid;
-  /* Two equally wide columns */
-  grid-template-columns: repeat(2, 1fr);
-  /* Gap between grid items */
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
-/* Individual Grid Item Styling */
+/* Grid items for form fields */
 .grid-item {
-  /* Use flexbox to arrange content within each grid item */
   display: flex;
   flex-direction: column;
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border-color: #00008b;
+  background: #ffffff;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+/* Labels styling */
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+}
+
+/* Error message styling */
+.error {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit button styling */
+button {
+  padding: 10px 15px;
+  background: #ffffff;
+  font-size: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid rgb(208, 156, 156);
+  width: 200px;
+}
+
+button[type="submit"]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(215, 208, 208);
+}
+
+.header-footer {
+  background: rgb(173, 165, 165);
+  color: white;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+button:hover {
+  color: #ffffff;
+  background: #e07878;
+}
+
+.content-frame {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submit-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
 }

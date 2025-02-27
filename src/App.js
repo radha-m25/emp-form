@@ -1,20 +1,14 @@
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom for navigation
+
 import './App.css'; // Import CSS file for styling
+import Home from './components/home/Home';
 
 function App() {
-  const navigate = useNavigate(); // Initialize useNavigate which returns a function to navigate programmatically
-
-  // Handle the button click to navigate to the EmployeeForm
-  const handleForm = () => {
-    navigate("/form"); // Navigate to the /form path
-  }
 
   return (
     <div className='main-container'>
-      <h3>
-        Please click the button below to fill out the Employee Form.
-      </h3>
-      <button className='btn' onClick={handleForm}>EMPLOYEE FORM</button> {/* Button to navigate to the EmployeeForm */}
+      <header className='header-footer'><img style={{ width: '30px', height: '30px' , padding: '10px'}} src='https://icon-library.com/images/employee-icon-png/employee-icon-png-17.jpg' alt='emp-img'></img></header>
+      <Home/>
+      <footer className='header-footer'>© 6DTech. All Rights Reserved.</footer>
     </div>
   );
 }

@@ -1,15 +1,19 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
+import { useNavigate } from "react-router-dom";
 
 const EmployeeForm = () => {
+  const { formData, errors, handleInputChange, handleSubmit, isFormValid } = useForm();
+  const navigate = useNavigate();
 
-  // Destructure form-related functions and data from useForm hook
-  const { formData, errors, handleInputChange, handleSubmit } = useForm();
+  const handleBackBtn = () => {
+    navigate("/");
+  }
 
   return (
     <div className="form-container">
       <div className="card">
-        <h4 style={{ color: "#00008b" }}>EMPLOYEE FORM</h4>
+        <h4 style={{textAlign: 'center', fontSize: '16px'}}>EMPLOYEE FORM</h4>
         <form className="form-content" onSubmit={handleSubmit}>
           <div className="grid-container">
             {/* First Name Field */}
@@ -25,7 +29,7 @@ const EmployeeForm = () => {
                 required
               />
             </div>
-            
+
             {/* Middle Name Field */}
             <div className="grid-item middleName">
               <label>MIDDLE NAME</label>
@@ -38,7 +42,7 @@ const EmployeeForm = () => {
                 onChange={handleInputChange}
               />
             </div>
-            
+
             {/* Last Name Field */}
             <div className="grid-item lastName">
               <label>LAST NAME*</label>
@@ -52,7 +56,7 @@ const EmployeeForm = () => {
                 required
               />
             </div>
-            
+
             {/* Date of Birth Field */}
             <div className="grid-item dob">
               <label>DOB*</label>
@@ -65,14 +69,15 @@ const EmployeeForm = () => {
                 onChange={handleInputChange}
                 required
               />
+              {errors.dob && <span className="error">** {errors.dob} **</span>}
             </div>
-            
+
             {/* Phone Number Field */}
             <div className="grid-item phoneNum">
               <label>PHONE NUMBER*</label>
               <input
                 data-style="common"
-                type="number"
+                type="text"
                 name="phoneNum"
                 value={formData.phoneNum}
                 placeholder="Phone Number"
@@ -81,7 +86,7 @@ const EmployeeForm = () => {
               />
               {errors.phoneNum && <span className="error">** {errors.phoneNum} **</span>}
             </div>
-            
+
             {/* Email Field */}
             <div className="grid-item email">
               <label>EMAIL*</label>
@@ -109,7 +114,7 @@ const EmployeeForm = () => {
                 onChange={handleInputChange}
               />
             </div>
-            
+
             {/* Address Field */}
             <div className="grid-item address">
               <label>ADDRESS*</label>
@@ -123,12 +128,15 @@ const EmployeeForm = () => {
               />
               {errors.address && <span className="error">** {errors.address} **</span>}
             </div>
+
+            {/* Submit Button */}
+            <div className="grid-item submit-button">
+              <button onClick={handleBackBtn}>Back</button>
+              <button type="submit" disabled={!isFormValid}>
+                Submit
+              </button>
+            </div>
           </div>
-          
-          {/* Submit Button */}
-          <button className="btn" type="submit">
-            SUBMIT
-          </button>
         </form>
       </div>
     </div>
