@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"; // Import createBrowserRouter from react-router-dom
-import App from "../../App"; // Import the main App component
-import EmployeeForm from "../employeeForm/EmployeeForm"; // Import the EmployeeForm component
+import App from "../App"; // Import the main App component
+import EmployeeForm from "../components/employeeForm/EmployeeForm"; // Import the EmployeeForm component
 
 // Create the router configuration using createBrowserRouter
 const AppRouter = createBrowserRouter([
